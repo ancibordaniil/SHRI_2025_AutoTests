@@ -161,6 +161,7 @@ export const Dropzone: FC<Props> = ({ file, status, error, onFileSelect, onClear
 
     return (
         <div
+            data-testid="dropzone"
             className={cn(styles.dropzone, {
                 [styles.dragActive]: isDragActive,
                 [styles.dragReject]: validationError,
@@ -170,8 +171,6 @@ export const Dropzone: FC<Props> = ({ file, status, error, onFileSelect, onClear
             onDragLeave={handleDragLeave}
             onDrop={handleDrop}
             onClick={handleZoneClick}
-            role="button"
-            tabIndex={0}
         >
             <input type="file" accept=".csv" ref={inputRef} onChange={handleInputChange} hidden />
 
